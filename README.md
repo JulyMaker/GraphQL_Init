@@ -37,7 +37,7 @@ npm start
 
 ## <a name="Examples"></a>Examples 📢
 
-[Query Examples](https://github.com/JulioUrjc/GraphQL_Init/blob/master/query&mutationExamples.txt)
+[Query Examples](https://github.com/JulyMaker/GraphQL_Init/blob/main/GraphQL_test/query%26mutationExamples.txt)
 
 
 ### <a name="Author">Author ✒️
