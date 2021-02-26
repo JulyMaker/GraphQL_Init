@@ -1,0 +1,83 @@
+
+query {
+  friend{
+    fistname
+    lastname
+    email
+  }
+}
+
+mutation{
+  createFriend(input:{
+    firstName: "July"
+    lastName: "Maker"
+    email: "me@me.com"
+    age: 36
+  }) {
+    id
+    firstName
+    age
+  }
+}
+
+mutation{
+	updateFriend(input: {
+    id: "6038e1cf5658c13f94801000"
+    email:"raquel@raquel.com"
+  }) {
+    id
+    email
+  }
+}
+
+mutation{
+	deleteFriend(id: "6038e2aa5658c13f94801001")
+}
+
+query{
+	getAliens{
+    firstName
+    lastName
+    planet
+  }
+}
+
+query{
+  getOneFriend(id: "6038e834dd4269624caa5696"){
+    firstName
+    lastName
+    age
+  }
+}
+
+------ Aliases ---------
+
+query{
+	friend: getOneFriend(id:"6038e834dd4269624caa5696"){
+    firstName
+    lastName
+    age
+  }
+  aliens: getAliens{
+    firstName
+    planet
+  }
+}
+
+----- Fragments ---------------
+
+query{
+	one: getOneFriend(id: "6038e834dd4269624caa5696"){
+    ...friendFragment
+  }
+  two: getOneFriend(id: "6038e834dd4269624caa5696"){
+    ...friendFragment
+  }
+}
+
+fragment friendFragment on Friend{
+ 	firstName
+  lastName 
+  age
+  gender
+}
